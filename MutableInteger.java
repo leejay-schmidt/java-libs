@@ -17,7 +17,7 @@ public class MutableInteger extends Number implements Comparable<MutableInteger>
   }
   public MutableInteger(String str) {
     super();
-    this.value = value.strToInt(str);
+    this.value = strToInt(str);
     locked = false;
   }
   public void lock() {
@@ -72,21 +72,14 @@ public class MutableInteger extends Number implements Comparable<MutableInteger>
     return false;
   }
   @Override
-  public int compareTo(Object obj) {
-    if(!(obj instanceof MutableInteger)) {
-      return super.compareTo(obj);
-    }
-    if(this.value==n.value()) {
+  public int compareTo(MutableInteger obj) {
+    if(this.value==obj.value()) {
       return 0;
     }
-    return this.value>n.value()?1:-1;
+    return this.value>obj.value()?1:-1;
   }
-  @Override
-  public boolean equals(Object obj) {
-    if(!(obj instanceof MutableInteger)) {
-      return super.equals(obj);
-    }
-    return this.value==n.value();
+  public boolean equals(MutableInteger obj) {      
+    return this.value==obj.value();
   }
   public boolean setValue(int value) {
     if(!this.locked) {
