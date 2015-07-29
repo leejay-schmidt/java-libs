@@ -73,7 +73,7 @@ public class MutableInteger extends Number implements Comparable<MutableInteger>
   }
   @Override
   public int compareTo(Object obj) {
-    if(!(obj instanceOf MutableInteger)) {
+    if(!(obj instanceof MutableInteger)) {
       return super.compareTo(obj);
     }
     if(this.value==n.value()) {
@@ -83,7 +83,7 @@ public class MutableInteger extends Number implements Comparable<MutableInteger>
   }
   @Override
   public boolean equals(Object obj) {
-    if(!(obj instanceOf MutableInteger)) {
+    if(!(obj instanceof MutableInteger)) {
       return super.equals(obj);
     }
     return this.value==n.value();
