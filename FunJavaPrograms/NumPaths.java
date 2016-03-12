@@ -29,7 +29,7 @@ public class NumPaths {
     }
     public int findPaths() {
         Stack<Map<String, Integer>> s = new Stack<Map<String, Integer>>();
-        //set will act as dictionary for index in array
+        //map will act as dictionary for index in array
         Map<String, Integer> firstVal = newIdxMap(0, 0);
         s.push(firstVal);
         //use depth first search to get ALL possible paths
